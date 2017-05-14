@@ -1,0 +1,16 @@
+
+<!-- js lib -->
+<script src="/js/lib/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/bootstrap.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="//localhost:35729/livereload.js"></script>
+
+<!-- settings from server -->
+<script> var host = <%- JSON.stringify(host) %>; </script>
+<script> var live = <%- live %>; </script>
+<script> var ip = host.ip </script>
+
+<!-- custom js -->
+<script src="/js/config.min.js"></script>
+<script src="/js/index.min.js"></script>
+<script src="/js/socket.min.js"></script>

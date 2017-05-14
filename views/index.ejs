@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+	<!-- Header -->
+	<% include components/header %>
+	<body>
+		<!-- Content -->
+		<% if (page == 'main') { %>
+			
+			<% include pages/main %>
+		
+		<% } else { %>
+		
+			<% include pages/error_404 %>
+		
+		<% } %>
+		
+		<!-- Footer -->
+		<% include components/footer %>
+		<!-- Scripts -->
+		<% include components/scripts %>
+	</body>
+</html>
