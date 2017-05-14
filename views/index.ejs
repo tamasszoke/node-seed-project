@@ -4,6 +4,10 @@
 	<!-- Header -->
 	<% include components/header %>
 	<body>
+
+		<!-- Navigation -->
+		<% include components/navigation %>
+
 		<!-- Content -->
 		<% if (page == 'main') { %>
 			
@@ -11,12 +15,12 @@
 		
 		<% } else { %>
 		
-			<% include pages/error_404 %>
-		
+			<% include pages/error %>
 		<% } %>
 		
 		<!-- Footer -->
 		<% include components/footer %>
+
 		<!-- Scripts -->
 		<% include components/scripts %>
 	</body>

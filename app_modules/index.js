@@ -7,16 +7,10 @@
 module.exports = function (root) {
 
 	var app = root.app,
-		io = root.io,
 		host = root.host,
-		crypto = root.crypto,
-		log = root.log,
-		smtpTransport = root.smtpTransport,
-		db_stat = root.db_stat,
-		live = root.live;
-
-	var all_rooms = [],
-		current_room;
+		io = root.io,
+		live = root.live,
+		log = root.log;
 
 	/* Routing */
 

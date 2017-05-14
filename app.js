@@ -4,83 +4,93 @@
 	Copyright (c) 2017 Tamas Szoke. All Rights Reserved.
 */
 
-/* Variables for modules */
+// Variables for modules
 var app, express, http, io, server, ws, mongojs, nodemailer, fs, path, host, config, passport, request,
 	crypto, facebookStrategy, twitterStrategy, googleStrategy, globalSocket, cookieParser, bodyParser,
 	session, async, options, modules = [];
 
-/* Variables for database */
+// Variables for database
 var db, collection;
 
-/* Variables for communication */
+// Variables for communication
 var globalSocket, cookieParser, bodyParser, session;
+
+// Load configuration
+modules['config'] = require('./app_modules/config');
+
+// Live or local, configurations
+var live = modules['config']['live'],
+	hostConfig = modules['config']['host'],
+	passportConfig = modules['config']['api_keys'],
+	mongoConfig = modules['config']['mongodb'];
 
 express = require('express');
 https = require('https');
 http = require('http');
 
-app = express(); /* Start express */
-ws = require('socket.io'); /* Communication between the client and server */
-mongojs = require('mongojs'); /* Database connection */
-nodemailer = require('nodemailer'); /* Email messaging */
+app = express(); // Start Express
+ws = require('socket.io'); // Communication between the client and server
+mongojs = require('mongojs'); // Database connection
+nodemailer = require('nodemailer'); // Email messaging
 nodemailer_smtp_transport = require('nodemailer-smtp-transport');
-request = require('request'); /* Ajax calls */
-fs = require('fs'); /* Loading js files */
-crypto = require('crypto'); /* Generating link */
+request = require('request'); // Ajax calls
+fs = require('fs'); // Loading modules (js files)
+crypto = require('crypto'); // Generating link
 async = require('async');
 
-/* Express 4 */
+// Express 4 specific things
 cookieParser = require('cookie-parser');
 bodyParser = require('body-parser');
 session = require('express-session');
 
-/* Passport */
+// Passport
 passport = require('passport');
 facebookStrategy = require('passport-facebook').Strategy;
 twitterStrategy = require('passport-twitter').Strategy;
 googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-/* Configuration */
-modules['config'] = require('./app_modules/config');
-
-var live = modules['config']['live'];
-
 if (live) {
 
-	config = modules['config']['api_keys'];
-
-	/* SSL live (optional) */
+	// SSL live (optional)
 	/*options = {
 		key: fs.readFileSync(modules['config']['ssl']['liveSsl'].key),
 		cert: fs.readFileSync(modules['config']['ssl']['liveSsl'].cert)
 	};*/
 
-	/* Live */
-	host = { ip: null, port: 80, port_ssl: 443 };
+	// Live
+	host = {
+		ip: hostConfig['live']['ip'],
+		port: hostConfig['live']['port'],
+		portSSL: hostConfig['live']['portSSL']
+	};
 
-	/* Connecting to database (mongolab.com) */
-	db = mongojs(modules['config']['mongodb']['liveUrl']);
+	// Connecting to database (try out mongolab.com)
+	db = mongojs(mongoConfig['liveUrl']);
+	// Select collection from database
 	collection = db.collection('any');
 
 } else {
 
-	config = modules['config']['apiKeys'];
-
-	/* SSL local (optional) */
+	// SSL local (optional)
 	/*options = {
 		key: fs.readFileSync(modules['config']['ssl']['localSsl'].key),
 		cert: fs.readFileSync(modules['config']['ssl']['localSsl'].cert)
 	};*/
 
-	/* Local */
-	host = { ip: 'localhost', port: 7777, port_ssl: 7777 };
+	// Local
+	host = {
+		ip: hostConfig['local']['ip'],
+		port: hostConfig['local']['port'],
+		portSSL: hostConfig['local']['portSSL']
+	}
 
-	/* Connecting to database (mongolab.com) */
-	db = mongojs(modules['config']['mongodb']['localUrl']);
+	// Connecting to database (try out mongolab.com)
+	db = mongojs(mongoConfig['localUrl']);
+	// Select collection from database
 	collection = db.collection('any');
 };
 
-/* Reusable transport method (opens pool of SMTP connections) */
+// Reusable transport method (opens pool of SMTP connections)
 var smtpTransport = nodemailer.createTransport(nodemailer_smtp_transport({
     service: 'gmail',
     auth: {
@@ -89,28 +99,33 @@ var smtpTransport = nodemailer.createTransport(nodemailer_smtp_transport({
     }
 }));
 
-/* Configure application */
+// Configure application
 app.use(express["static"]('./static'));
-app.set('view engine', 'ejs'); /* Using EJS as view engine */
-//app.set('views', '.static/view'); /* Change default view directory (optional) */
-app.use(cookieParser()); /* Read cookies (need for auth) */
-app.use(bodyParser()); /* Ajax at index page */
-app.use(session({ secret: 'TellMeYourSecret' }));
-app.use(passport.initialize());
+app.set('view engine', 'ejs'); // Using EJS as view engine
+//app.set('views', '.static/view'); // Change default view directory (optional)
+app.use(cookieParser()); // Read cookies (need for auth)
+app.use(bodyParser.json()); // For JSON requests
+//app.use(bodyParser.urlencoded({extended: true})); // optional, see: http://stackoverflow.com/q/39870867/1371995
+app.use(session({ // Session
+    secret: crypto.randomBytes(48).toString('hex'),
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(passport.initialize()); // Passport for Facebook, Twitter, Google login
 app.use(passport.session());
 
-/* Start server */
+// Start server
 if (live) http.createServer(app).listen(host.port); // change this
-//server = https.createServer(options, app).listen(host.port_ssl, host.ip);
+//server = https.createServer(options, app).listen(host.portSSL, host.ip);
 server = http.createServer(app).listen(host.port, host.ip);
 
-/* Start socket.io */
+// Start socket.io
 io = ws.listen(server);
 
-/* Some info */
+// Some info
 log('Server started...');
 
-/* Loading custom modules */
+// Loading custom modules
 fs.readdirSync(__dirname + '/app_modules/').forEach(function(file) {
 
 	if (file.match(/.+\.js/g) !== null) {
@@ -122,22 +137,22 @@ fs.readdirSync(__dirname + '/app_modules/').forEach(function(file) {
 			modules[name] = require('./app_modules/' + name)({
 				app: app,
 				host: host,
-				config: config,
 				io: io,
-				request: request,
-				mongojs: mongojs,
-				collection: collection,
-				smtpTransport: smtpTransport,
-				fs: fs,
-				path: path,
-				async: async,
-				crypto: crypto,
 				live: live,
 				log: log,
+				//request: request,
+				//mongojs: mongojs,
+				//collection: collection,
+				//smtpTransport: smtpTransport,
+				//async: async,
+				//fs: fs,
+				//path: path,
+				//crypto: crypto,
 				//passport: passport,
 				//facebookStrategy: facebookStrategy,
 				//twitterStrategy: twitterStrategy,
-				//googleStrategy: googleStrategy
+				//googleStrategy: googleStrategy,
+				//passportConfig: passportConfig
 			});
 		};
 
@@ -147,7 +162,7 @@ fs.readdirSync(__dirname + '/app_modules/').forEach(function(file) {
 
 log('Server ready on port ' + host.port + '!');
 
-/* Custom logging */
+// Custom logging
 function log(msg) {
 
 	var d = new Date();

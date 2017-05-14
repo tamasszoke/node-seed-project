@@ -28,18 +28,16 @@
 module.exports = function (root) {
 
 	var app = root.app,
-		io = root.io,
 		host = root.host,
-		crypto = root.crypto,
-		log = root.log,
-		user = root.user,
-		smtpTransport = root.smtpTransport;
+		io = root.io,
+		live = root.live,
+		log = root.log;
 
 	/* Socket connection */
 
 	io.on('connection', function(socket) {
 	
-		log('Socket connected!');
+		log('Socket.IO client connected!');
 
 		socket.on('SomethingYouNeed', function(message) {
 
@@ -47,22 +45,9 @@ module.exports = function (root) {
 			log(message);
 		});
 
-		socket.on('SomethingOther', function(message) {
-
-			var type = message.type || '';
-
-			if (type == 'YouCanSpecifyTypes') {} else {};
-		});
-
 		socket.on('disconnect', function() {
 
-			log('Socket disconnected!');
+			log('Socket.IO client disconnected!');
 		});
 	});
-
-	/* Functions */
-
-	function SomeFunction(param_1, param_2) {
-
-	};
 };

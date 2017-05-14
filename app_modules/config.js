@@ -7,7 +7,21 @@
 /* Change between 'local' and 'live' version */
 var live = false;
 
-/* SSL */
+/* Hosts */
+var host = {
+	live: {
+		ip: null,
+		port: 80,
+		portSSL: 443
+	},
+	local: {
+		ip: 'localhost',
+		port: 3000,
+		portSSL: 3000
+	}
+};
+
+/* SSL files */
 var ssl = {
 	liveSsl: {
 		key: 'ssl_certification/YourSSLKey',
@@ -19,7 +33,7 @@ var ssl = {
 	}
 };
 
-/* MongoDB */
+/* MongoDB connecton URLs */
 var mongodb = {
 	liveUrl: '',
 	localUrl: ''
@@ -47,4 +61,10 @@ var apiKeys = {
 	}
 }
 
-module.exports = {ssl: ssl, apiKeys: apiKeys, mongodb: mongodb};
+module.exports = {
+	live: live,
+	host: host,
+	ssl: ssl,
+	apiKeys: apiKeys,
+	mongodb: mongodb
+};

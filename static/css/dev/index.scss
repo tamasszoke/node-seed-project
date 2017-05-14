@@ -1,7 +1,12 @@
 
 $font-color: #fff;
+$font-lobster: 'Lobster', cursive;
+$font-shadow: 2px 2px 5px #000;
+
 $background: url('/images/background.jpg');
-$panel-background: rgba(0, 0, 0, .3);
+$background-panel: rgba(0, 0, 0, .3);
+
+$icon-size: 60px;
 $box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, .5);
 
 body {
@@ -11,12 +16,31 @@ body {
 	color: $font-color;
 }
 
-h1{
-	margin-top: 0;
-}
-
 a{
 	color: $font-color;
+}
+
+.nav{
+	margin-top: 8px;
+}
+
+.active{
+	box-shadow: $box-shadow;
+}
+
+.title{
+	margin-top: 0;
+	margin-left: 15px;
+	font-family: $font-lobster;
+	font-size: 48px;
+	text-shadow: $font-shadow;
+	line-height: $icon-size;
+}
+
+.icon{
+	width: $icon-size;
+	height: $icon-size;
+	vertical-align: top;
 }
 
 .row{
@@ -24,7 +48,7 @@ a{
 }
 
 .panel{
-	background: $panel-background;
+	background: $background-panel;
 	box-shadow: $box-shadow;
 }
 
