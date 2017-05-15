@@ -14,26 +14,26 @@ Start Node.js, Express, Socket.IO development faster with extras!
 <p><b>2.</b> Start Grunt: <code>grunt watch</code></p>
 <p><b>3.</b> Go to <code>localhost:3000</code> in browser</p>
 
-<h2>Modules</h2>
+<h2>Modules (default versions)</h2>
 
-<li>Express</li>
-<li>EJS</li>
-<li>MongoJS</li>
-<li>Socket.IO</li>
-<li>Passport</li>
-<li>Nodemailer</li>
-<li>Async</li>
-<li>Grunt</li>
-<li>Request</li>
-<li>Path</li>
+<li>Express (4.15.2)</li>
+<li>EJS (2.5.6)</li>
+<li>MongoJS (2.4.0)</li>
+<li>Socket.IO (1.7.4)</li>
+<li>Passport (0.3.2)</li>
+<li>Nodemailer (1.11.0)</li>
+<li>Async (2.4.0)</li>
+<li>Grunt (0.4.5)</li>
+<li>Request (2.81.0)</li>
+<li>Path (0.12.7)</li>
 
-<h2>Built-in extras</h2>
+<h2>Built-in extras (optional)</h2>
 
-<li>JQuery</li>
-<li>AngularJS</li>
-<li>Bootstrap</li>
-<li>Font awesome</li>
-<li>Animate CSS</li>
+<li>JQuery (3.2.1)</li>
+<li>AngularJS (1.6.4)</li>
+<li>Bootstrap (3.3.7)</li>
+<li>Font awesome (4.7)</li>
+<li>Animate CSS (3.5.2)</li>
 <br/>
 <li>Prepared for <code>HTTPS</code></li>
 <li>Custom logging function</li>
