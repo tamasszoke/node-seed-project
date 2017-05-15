@@ -20,12 +20,34 @@ a{
 	color: $font-color;
 }
 
+.fa{
+	display:inline;
+	float:left;
+	margin-top: 5px;
+	color:rgba(92, 184, 92, 1);
+}
+
+.panel-body a:hover{
+	color:#fff;
+}
+
+.panel-body a:visited{
+	color:#fff;
+}
+
 .nav{
 	margin-top: 8px;
 }
 
 .active{
+	margin-right: 8px;
 	box-shadow: $box-shadow;
+}
+
+.text{
+	display:inline;
+	float:left;
+	margin-left: 15px;
 }
 
 .title{
