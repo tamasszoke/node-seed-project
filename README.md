@@ -14,7 +14,7 @@ Start Node.js, Express, Socket.IO development faster with extras!
 <p><b>2.</b> Start Grunt: <code>grunt watch</code></p>
 <p><b>3.</b> Go to <code>localhost:3000</code> in browser</p>
 
-<h2>Launcher</h2>
+<h2>Launcher script</h2>
 
 <p>Script to start the Server, the Grunt Watch task, the Sublime Text editor<br/>and open the application in the default browser for you.</p>
 <p>There are two versions of it: <a href="https://gist.github.com/tamasszoke/0293f7bff15e253dce15e84c259df8ff" target="_new">Linux</a>,
