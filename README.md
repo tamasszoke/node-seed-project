@@ -30,9 +30,18 @@ Start Node.js, Express, Socket.IO development faster with extras!
 <li>MongoJS (2.4.0)</li>
 <li>Socket.IO (1.7.4)</li>
 <li>Passport (0.3.2)</li>
+<li>- Passport Facebook (2.1.1)</li>
+<li>- Passport Twitter (1.0.4)</li>
+<li>- Passport Google-oauth (1.0.0)</li>
 <li>Nodemailer (1.11.0)</li>
+<li>- Nodemailer SMTP Transport (2.7.4)</li>
 <li>Async (2.4.0)</li>
 <li>Grunt (0.4.5)</li>
+<li>- Grunt Contrib JShint (1.1.0)</li>
+<li>- Grunt Contrib UglifyJS (2.3.0)</li>
+<li>- Grunt Contrib SASS (1.0.0)</li>
+<li>- Grunt Contrib Watch (0.6.1)</li>
+<li>- Grunt Notify (0.4.5)</li>
 <li>Request (2.81.0)</li>
 <li>Path (0.12.7)</li>
 
