@@ -2,25 +2,25 @@
 
 Start Node.js, Express, Socket.IO development faster with extras!
 
-<h2>Installation</h2>
+## Installation
 
 <p><b>1.</b> Install Nodemon: <code>npm install nodemon -g</code></p>
 <p><b>2.</b> Install Grunt: <code>npm install -g grunt-cli</code></p>
 <p><b>3.</b> Install Node modules: <code>sudo npm install</code></p>
 
-<h2>Usage</h2>
+## Usage
 
 <p><b>1.</b> Start Nodemon: <code>nodemon app.js</code></p>
 <p><b>2.</b> Start Grunt: <code>grunt watch</code></p>
 <p><b>3.</b> Go to <code>localhost:3000</code> in browser</p>
 
-<h2>Launcher script</h2>
+## Launcher script
 
 <p>Script to start the Server, the Grunt Watch task, the Sublime Text<br/>editor and open the application in the default browser.</p>
 <p>There are two versions of it: <a href="https://gist.github.com/tamasszoke/0293f7bff15e253dce15e84c259df8ff" target="_new">Linux</a>,
  <a href="https://gist.github.com/tamasszoke/a7ce53a6bc0cace4cb198d78ff2b4fbe" target="_new">Windows</a>.</p>
 
-<h2>Map</h2>
+## Basics
 
 - Server side -> /app_modules
 - Client side -> /static and /views
@@ -30,12 +30,10 @@ Start Node.js, Express, Socket.IO development faster with extras!
 <p>Routing -> /app_modules/index.js</p>
 <p>Socket.IO -> /app_modules/socket.js</p>
 
-<h2>Tips</h2>
-
 <p>Create/modify JS in /static/js/dev, Grunt will create .min.js to /static/js</p>
 <p>Create/modify CSS in /static/css/dev, Grunt will create .min.css to /static/css</p>
 
-<h2>Modules (default versions)</h2>
+## Modules (default versions)
 
 - Express (4.15.2)
   - Body Parser (1.17.1)
@@ -60,7 +58,7 @@ Start Node.js, Express, Socket.IO development faster with extras!
 - Request (2.81.0)
 - Path (0.12.7)
 
-<h2>Built-in extras (optional)</h2>
+## Built-in extras (optional)
 
 - JQuery (3.2.1)
 - AngularJS (1.6.4)
@@ -70,7 +68,7 @@ Start Node.js, Express, Socket.IO development faster with extras!
 - Prepared for <code>HTTPS</code>
 - Custom logging function
 
-<h2>License</h2>
+## License
 
 <b>The MIT License (MIT)</b><br/>
 Copyright (c) 2017 Tamas Szoke
