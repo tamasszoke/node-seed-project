@@ -27,7 +27,7 @@ Client side: `/static` and `/views`
 
 Server: `/app.js`<br/>
 Configuration: `/controllers/config.js`<br/>
-Routing: `/controllers/index.js`<br/>
+Routing: `/controllers/routing.js`<br/>
 Socket.IO: `/controllers/socket.js`<br/>
 
 Create/modify JS files in `/static/js/dev`, Grunt will create `.min.js` to `/static/js`<br/>
