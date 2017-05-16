@@ -4,15 +4,15 @@ Start Node.js, Express, Socket.IO development faster with extras!
 
 ## Installation
 
-<p><b>1.</b> Install Nodemon: <code>npm install nodemon -g</code></p>
-<p><b>2.</b> Install Grunt: <code>npm install -g grunt-cli</code></p>
-<p><b>3.</b> Install Node modules: <code>sudo npm install</code></p>
+1. Install Nodemon: <code>npm install nodemon -g</code>
+2. Install Grunt: <code>npm install -g grunt-cli</code>
+3. Install Node modules: <code>sudo npm install</code>
 
 ## Usage
 
-<p><b>1.</b> Start Nodemon: <code>nodemon app.js</code></p>
-<p><b>2.</b> Start Grunt: <code>grunt watch</code></p>
-<p><b>3.</b> Go to <code>localhost:3000</code> in browser</p>
+1. Start Nodemon: <code>nodemon app.js</code>
+2. Start Grunt: <code>grunt watch</code>
+3. Go to <code>localhost:3000</code> in browser
 
 ## Launcher script
 
@@ -22,16 +22,16 @@ Start Node.js, Express, Socket.IO development faster with extras!
 
 ## Basics
 
-- Server side -> /app_modules
-- Client side -> /static and /views
-<br/>
-<p>Configuration -> /app_modules/config.js</p>
-<p>Server -> /app.js</p>
-<p>Routing -> /app_modules/index.js</p>
-<p>Socket.IO -> /app_modules/socket.js</p>
+Server side -> `/app_modules`<br/>
+Client side -> `/static and /views`
 
-<p>Create/modify JS in /static/js/dev, Grunt will create .min.js to /static/js</p>
-<p>Create/modify CSS in /static/css/dev, Grunt will create .min.css to /static/css</p>
+Configuration -> `/app_modules/config.js`<br/>
+Server -> `/app.js`<br/>
+Routing -> `/app_modules/index.js`<br/>
+Socket.IO -> `/app_modules/socket.js`<br/>
+
+Create/modify JS files in `/static/js/dev`, Grunt will create `.min.js` to `/static/js`<br/>
+Create/modify CSS files in `/static/css/dev`, Grunt will create `.min.css` to `/static/css`
 
 ## Modules (default versions)
 
