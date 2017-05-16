@@ -23,6 +23,9 @@ Start Node.js, Express, Socket.IO development faster with extras!
 <h2>Modules (default versions)</h2>
 
 <li>Express (4.15.2)</li>
+<li>Body Parser (1.17.1)</li>
+<li>Cookie Parser (1.4.3)</li>
+<li>Express Session (1.15.2)</li>
 <li>EJS (2.5.6)</li>
 <li>MongoJS (2.4.0)</li>
 <li>Socket.IO (1.7.4)</li>
