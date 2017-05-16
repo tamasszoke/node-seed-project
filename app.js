@@ -16,7 +16,7 @@ var db, collection;
 var globalSocket, cookieParser, bodyParser, session;
 
 // Load configuration
-modules['config'] = require('./app_modules/config');
+modules['config'] = require('./controllers/config');
 
 // Live or local, configurations
 var live = modules['config']['live'],
@@ -125,8 +125,8 @@ io = ws.listen(server);
 // Some info
 log('Server started...');
 
-// Loading custom modules
-fs.readdirSync(__dirname + '/app_modules/').forEach(function(file) {
+// Loading controllers
+fs.readdirSync(__dirname + '/controllers/').forEach(function(file) {
 
 	if (file.match(/.+\.js/g) !== null) {
 		
@@ -134,7 +134,7 @@ fs.readdirSync(__dirname + '/app_modules/').forEach(function(file) {
 
 		if (name != 'config') {
 
-			modules[name] = require('./app_modules/' + name)({
+			modules[name] = require('./controllers/' + name)({
 				app: app,
 				host: host,
 				io: io,
@@ -156,7 +156,7 @@ fs.readdirSync(__dirname + '/app_modules/').forEach(function(file) {
 			});
 		};
 
-		log('Module "' + file + '" loaded');
+		log('Controller "' + file + '" loaded');
 	};
 });
 
