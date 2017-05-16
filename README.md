@@ -37,7 +37,7 @@ Start Node.js, Express, Socket.IO development faster with extras!
 <li>- Nodemailer SMTP Transport (2.7.4)</li>
 <li>Async (2.4.0)</li>
 <li>Grunt (0.4.5)</li>
-<li>- Grunt Contrib JShint (1.1.0)</li>
+<li>- Grunt Contrib JSHint (1.1.0)</li>
 <li>- Grunt Contrib UglifyJS (2.3.0)</li>
 <li>- Grunt Contrib SASS (1.0.0)</li>
 <li>- Grunt Contrib Watch (0.6.1)</li>
