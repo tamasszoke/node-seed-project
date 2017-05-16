@@ -31,7 +31,7 @@ Routing: `/app_modules/index.js`<br/>
 Socket.IO: `/app_modules/socket.js`<br/>
 
 Create/modify JS files in `/static/js/dev`, Grunt will create `.min.js` to `/static/js`<br/>
-Create/modify CSS files in `/static/css/dev`, Grunt will create `.min.css` to `/static/css`
+Create/modify SCSS files in `/static/css/dev`, Grunt will create `.min.css` to `/static/css`
 
 ## Modules (default versions)
 
@@ -64,7 +64,7 @@ Create/modify CSS files in `/static/css/dev`, Grunt will create `.min.css` to `/
 - AngularJS (1.6.4)
 - Bootstrap (3.3.7)
 - Font awesome (4.7)
-- Animate CSS (3.5.2)
+- Animate CSS (3.5.2)<br/><br/>
 - Prepared for <code>HTTPS</code>
 - Custom logging function
 
