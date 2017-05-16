@@ -22,13 +22,13 @@ Start Node.js, Express, Socket.IO development faster with extras!
 
 ## Basics
 
-Server side: `/app_modules`<br/>
+Server side: `/controllers`<br/>
 Client side: `/static` and `/views`
 
 Server: `/app.js`<br/>
-Configuration: `/app_modules/config.js`<br/>
-Routing: `/app_modules/index.js`<br/>
-Socket.IO: `/app_modules/socket.js`<br/>
+Configuration: `/controllers/config.js`<br/>
+Routing: `/controllers/index.js`<br/>
+Socket.IO: `/controllers/socket.js`<br/>
 
 Create/modify JS files in `/static/js/dev`, Grunt will create `.min.js` to `/static/js`<br/>
 Create/modify SCSS files in `/static/css/dev`, Grunt will create `.min.css` to `/static/css`
