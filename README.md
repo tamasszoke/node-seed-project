@@ -30,8 +30,11 @@ Configuration: `/controllers/config.js`<br/>
 Routing: `/controllers/routing.js`<br/>
 Socket.IO: `/controllers/socket.js`<br/>
 
-Create/modify JS files in `/static/js/dev`, Grunt will create `.min.js` to `/static/js`<br/>
-Create/modify SCSS files in `/static/css/dev`, Grunt will create `.min.css` to `/static/css`
+Create/modify JS files in `/static/js/dev`, Grunt will create `.min.js` to `/static/js`.<br/>
+Create/modify SCSS files in `/static/css/dev`, Grunt will create `.min.css` to `/static/css`.
+
+HTML components at `/views/components`.
+HTML pages at `/views/pages`.
 
 ## Modules (default versions)
 
