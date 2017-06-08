@@ -6,14 +6,11 @@
 
 // Variables for modules
 var app, express, http, io, server, ws, mongojs, nodemailer, fs, path, host, config, passport, request,
-	crypto, facebookStrategy, twitterStrategy, googleStrategy, globalSocket, cookieParser, bodyParser,
+	crypto, facebookStrategy, twitterStrategy, googleStrategy, cookieParser, bodyParser,
 	session, async, options, modules = [];
 
 // Variables for database
 var db, collection;
-
-// Variables for communication
-var cookieParser, bodyParser, session;
 
 // Load configuration
 modules['config'] = require('./controllers/config');
