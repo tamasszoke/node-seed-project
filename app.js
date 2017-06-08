@@ -13,7 +13,7 @@ var app, express, http, io, server, ws, mongojs, nodemailer, fs, path, host, con
 var db, collection;
 
 // Variables for communication
-var globalSocket, cookieParser, bodyParser, session;
+var cookieParser, bodyParser, session;
 
 // Load configuration
 modules['config'] = require('./controllers/config');
