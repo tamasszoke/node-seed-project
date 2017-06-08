@@ -6,8 +6,8 @@
 
 // Variables for modules
 var app, express, http, io, server, ws, mongojs, nodemailer, fs, path, host, config, passport, request,
-	crypto, facebookStrategy, twitterStrategy, googleStrategy, cookieParser, bodyParser,
-	session, async, options, modules = [];
+	crypto, facebookStrategy, twitterStrategy, googleStrategy, cookieParser, bodyParser, session,
+    	async, options, modules = [];
 
 // Variables for database
 var db, collection;
