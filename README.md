@@ -6,7 +6,7 @@ Start Node.js, Express, Socket.IO development faster with extras!
 
 1. Install Nodemon: <code>npm install nodemon -g</code>
 2. Install Grunt: <code>npm install -g grunt-cli</code>
-3. Install Node modules: <code>sudo npm install</code>
+3. Install Node modules: <code>npm install</code>
 
 ## Usage
 
@@ -42,20 +42,19 @@ Create/modify SCSS files in `/static/css/dev`, Grunt will create `.min.css` to `
   - Cookie Parser (1.4.3)
   - Express Session (1.15.2)
 - EJS (2.5.6)
-- MongoJS (2.4.0)
-- Socket.IO (1.7.4)
-- Passport (0.3.2)
+- Mongoose (5.1.3)
+- Socket.IO (2.1.1)
+- Passport (0.4.0)
   - Passport Facebook (2.1.1)
   - Passport Twitter (1.0.4)
   - Passport Google-oauth (1.0.0)
-- Nodemailer (1.11.0)
+- Nodemailer (4.6.5)
   - Nodemailer SMTP Transport (2.7.4)
-- Async (2.4.0)
-- Grunt (0.4.5)
+- Grunt (1.0.2)
   - Grunt Contrib JSHint (1.1.0)
   - Grunt Contrib UglifyJS (2.3.0)
   - Grunt Contrib SASS (1.0.0)
-  - Grunt Contrib Watch (0.6.1)
+  - Grunt Contrib Watch (1.1.0)
   - Grunt Notify (0.4.5)
 - Request (2.81.0)
 - Path (0.12.7)

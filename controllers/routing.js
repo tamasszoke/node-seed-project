@@ -4,42 +4,28 @@
 	Copyright (c) 2017 Tamas Szoke. All Rights Reserved.
 */
 
-module.exports = function (root) {
+module.exports = (root) => {
 
-	var app = root.app,
-		host = root.host,
-		io = root.io,
-		live = root.live,
-		log = root.log;
+	const app = root.app;
+	const io = root.io;
+	const show = root.show;
+	const config = root.config;
 
-	/* Routing */
+	// routing
+	app.get('/', (req, res) => {
 
-	app.get('/', function(req, res) {
+		// redirecting if not https (optional)
+		//if (req.headers.host.match(/^www/) !== null || !req.secure) return res.redirect('https://' + req.headers.host.replace(/^www\./, '') + req.url);
 
-		/* Redirecting if not https (optional) */
-		/*if (req.headers.host.match(/^www/) !== null || !req.secure) { res.redirect('https://' + req.headers.host.replace(/^www\./, '') + req.url); }
-		else {*/
-
-			/* IP of client */
-			var ip = req.ip || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
-			log('Client IP: ' + ip);
-
-			res.render('index', {page: 'main', host: host, live: live});
-		//};
+		res.render('index', {page: 'main', host: config['host'], live: config['live']});
 	});
 
-	/*app.get('/SomethingYouNeed', function(req, res) {
-
-		res.render('SomePage', {host: host, live: live});
-	});*/
-
-	/* 404 error handling */
-	app.use(function(req, res, next) {
+	// error handling, 404
+	app.use((req, res, next) => {
 
 		if (req.originalUrl != '/favicon.ico') {
 
-			log('New route:' + req.originalUrl + ': ' + res.statusCode);
-			res.render('index', {page: 'error', host: host, live: live});
+			res.render('index', {page: 'error', host: config['host'], live: config['live']});
 		};
 	});
 };

@@ -4,67 +4,112 @@
 	Copyright (c) 2017 Tamas Szoke. All Rights Reserved.
 */
 
-/* Change between 'local' and 'live' version */
-var live = false;
+// modules
+const fs = require('fs');
+const show = require('eyecatcher');
 
-/* Hosts */
-var host = {
+// change between 'local' and 'live' version
+const live = false;
+
+// host configuration
+let host = {
 	live: {
 		ip: null,
-		port: 80,
-		portSSL: 443
+		url: 'YourLiveUrl',
+		port: process.env.PORT,
+		sslPort: 443,
+		sslOptions: {
+			//key: fs.readFileSync('ssl_certification/YourSSLKey'),
+			//cert: fs.readFileSync('ssl_certification/YourSSLCert')
+		},
+		mongoUrl: '',
+		passport: {
+			facebook: {
+				clientID: '',
+				clientSecret: '',
+				callbackUrl: 'http://your.url/auth/facebook/callback'
+			},
+			twitter: {
+				consumerKey: '',
+				consumerSecret: '',
+				callbackUrl: 'http://your.url/auth/twitter/callback'
+			},
+			google: {
+				clientID: '',
+				clientSecret: '',
+				callbackUrl: 'http://your.url/auth/google/callback'
+			}
+		}
 	},
 	local: {
 		ip: 'localhost',
 		port: 3000,
-		portSSL: 3000
+		sslPort: 3000,
+		sslOptions: {
+			//key: fs.readFileSync('ssl_certification/dev/YourDevSSLKey'),
+			//cert: fs.readFileSync('ssl_certification/dev/YourDevSSLCert')
+		},
+		mongoUrl: 'mongodb://localhost:27017/test',
+		passport: {
+			facebook: {
+				clientID: '',
+				clientSecret: '',
+				callbackUrl: 'http://localhost:7777/auth/facebook/callback'
+			},
+			twitter: {
+				consumerKey: '',
+				consumerSecret: '',
+				callbackUrl: 'http://localhost:7777/auth/twitter/callback'
+			},
+			google: {
+				clientID: '',
+				clientSecret: '',
+				callbackUrl: 'http://localhost:7777/auth/google/callback'
+			}
+		}
 	}
 };
 
-/* SSL files */
-var ssl = {
-	liveSsl: {
-		key: 'ssl_certification/YourSSLKey',
-		cert: 'ssl_certification/YourSSLCert'
-	},
-	localSsl: {
-		key: 'ssl_certification/dev/YourDevSSLKey',
-		cert: 'ssl_certification/dev/YourDevSSLCert'
-	}
+if (live) host = host['live'];
+else host = host['local'];
+
+const loadControllersWithModules = (modules) => {
+
+	let controllers = [];
+
+	fs.readdirSync(__dirname).forEach(function(file) {
+		if (file.match(/.+\.js/g) !== null && file != 'config.js') {
+			
+			const name = file.replace('.js', '');
+			controllers[name] = require(__dirname + '/' + name)(modules);
+			show.warn('Controller "' + file + '" loaded');
+		};
+	});
+
+	return controllers;
 };
 
-/* MongoDB connecton URLs */
-var mongodb = {
-	liveUrl: '',
-	localUrl: ''
+const loadModelsWithModules = (modules) => {
+
+	let models = [];
+	
+	fs.readdirSync('./models').forEach(function(file) {
+		if (file.match(/.+\.js/g) !== null) {
+			
+			const name = file.replace('.js', '');
+			models[name] = require('../models/' + name)(modules);
+			show.warn('Model "' + file + '" loaded');
+		};
+	});
+
+	return models;
 };
 
-/* Facebook, Twitter, Google API keys for Passport */
-var apiKeys = {
-	facebook: {
-		clientID: '',
-		clientSecret: '',
-		callbackUrl: 'http://your.url/auth/facebook/callback',
-		localCallbackUrl: 'http://localhost:7777/auth/facebook/callback'
-	},
-	twitter: {
-		consumerKey: '',
-		consumerSecret: '',
-		callbackUrl: 'http://your.url/auth/twitter/callback',
-		localCallbackUrl: 'http://localhost:7777/auth/twitter/callback'
-	},
-	google: {
-		clientID: '',
-		clientSecret: '',
-		callbackUrl: 'http://your.url/auth/google/callback',
-		localCallbackUrl: 'http://localhost:7777/auth/google/callback'
-	}
-}
-
-module.exports = {
+const config = {
 	live: live,
 	host: host,
-	ssl: ssl,
-	apiKeys: apiKeys,
-	mongodb: mongodb
+	loadModelsWithModules: loadModelsWithModules,
+	loadControllersWithModules: loadControllersWithModules
 };
+
+module.exports = config;

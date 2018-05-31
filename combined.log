@@ -1,0 +1,5 @@
+{"level":"info","message":"Server started..."}
+{"level":"debug","message":"Controller \"config.js\" loaded"}
+{"level":"debug","message":"Controller \"routing.js\" loaded"}
+{"level":"debug","message":"Controller \"socket.js\" loaded"}
+{"level":"debug","message":"Server ready on port 3000!"}

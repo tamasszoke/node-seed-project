@@ -75,4 +75,3 @@ grunt.initConfig({
 });
 
 grunt.registerTask('default', ['uglify', 'notify:completed']);
-//grunt.registerTask('default', ['obfuscator:index', 'obfuscator:home', 'obfuscator:question']);
