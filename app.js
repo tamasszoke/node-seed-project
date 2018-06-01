@@ -52,15 +52,15 @@ const smtpTransport = nodemailer.createTransport(nodemailer_smtp_transport({
 }));
 
 // start server, socket.io
-server = http.createServer(app).listen(config['host'].port, config['host'].ip);
+const server = http.createServer(app).listen(config['host'].port, config['host'].ip);
 //server = https.createServer(configHost.sslOptions, app).listen(host.sslPort, host.ip);
 io = socketio.listen(server);
 
 // connect to database
 mongoose.connect(config['host'].mongoUrl);
 const db = mongoose.connection;
-db.on('error', (error) => { show.log('Database connection error!'); });
-db.once('open', () => { show.warn('Database connected!'); });
+db.on('error', (error) => { /*show.log('Database connection error!');*/ });
+db.once('open', () => { /*show.warn('Database connected!');*/ });
 
 // loading models
 const models = config.loadModelsWithModules({
@@ -76,4 +76,13 @@ const controllers = config.loadControllersWithModules({
 	yourModel: models['yourModel']
 });
 
-show.log('Server ready on port ' + config['host'].port + '!');
+const close = () => {
+	server.close();
+	//show.log('Server closed!');
+};
+
+module.exports = {
+	close: close
+};
+
+//show.log('Server ready on port ' + config['host'].port + '!');

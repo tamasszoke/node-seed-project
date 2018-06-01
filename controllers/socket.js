@@ -1,8 +1,5 @@
 
-/*
-	Socket.IO connections of Node Seed Project
-	Copyright (c) 2017 Tamas Szoke. All Rights Reserved.
-*/
+'use strict'
 
 module.exports = (root) => {
 

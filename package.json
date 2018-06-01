@@ -7,15 +7,18 @@
 	"contact": "tamas.szoke.dev@gmail.com",
 	"license": "MIT",
 	"scripts": {
-		"start": "node app.js"
+		"start": "node app.js",
+		"test": "mocha --reporter spec"
 	},
 	"devDependencies": {
+		"chai": "4.1.2",
 		"grunt": "^1.0.2",
-		"grunt-contrib-uglify": "^3.3.0",
-		"grunt-contrib-sass": "^1.0.0",
 		"grunt-contrib-jshint": "^1.1.0",
+		"grunt-contrib-sass": "^1.0.0",
+		"grunt-contrib-uglify": "^3.3.0",
 		"grunt-contrib-watch": "^1.1.0",
-		"grunt-notify": "^0.4.5"
+		"grunt-notify": "^0.4.5",
+		"mocha": "5.2.0"
 	},
 	"dependencies": {
 		"body-parser": "^1.17.1",

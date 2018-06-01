@@ -1,8 +1,5 @@
 
-/*
-	Configuration of Node Seed Project
-	Copyright (c) 2017 Tamas Szoke. All Rights Reserved.
-*/
+'use strict'
 
 // modules
 const fs = require('fs');
@@ -77,14 +74,21 @@ const loadControllersWithModules = (modules) => {
 
 	let controllers = [];
 
-	fs.readdirSync(__dirname).forEach(function(file) {
-		if (file.match(/.+\.js/g) !== null && file != 'config.js') {
+	try {
+
+		fs.readdirSync(__dirname).forEach(function(file) {
+			if (file.match(/.+\.js/g) !== null && file != 'config.js') {
 			
-			const name = file.replace('.js', '');
-			controllers[name] = require(__dirname + '/' + name)(modules);
-			show.warn('Controller "' + file + '" loaded');
-		};
-	});
+				const name = file.replace('.js', '');
+				controllers[name] = require(__dirname + '/' + name)(modules);
+				//show.warn('Controller "' + file + '" loaded');
+			};
+		});
+
+	} catch(error) {
+
+		return false;
+	};
 
 	return controllers;
 };
@@ -93,23 +97,28 @@ const loadModelsWithModules = (modules) => {
 
 	let models = [];
 	
-	fs.readdirSync('./models').forEach(function(file) {
-		if (file.match(/.+\.js/g) !== null) {
-			
-			const name = file.replace('.js', '');
-			models[name] = require('../models/' + name)(modules);
-			show.warn('Model "' + file + '" loaded');
-		};
-	});
+	try {
+		
+		fs.readdirSync('./models').forEach(function(file) {
+			if (file.match(/.+\.js/g) !== null) {
+				
+				const name = file.replace('.js', '');
+				models[name] = require('../models/' + name)(modules);
+				//show.warn('Model "' + file + '" loaded');
+			};
+		});
+
+	} catch(error) {
+
+		return false;
+	};
 
 	return models;
 };
 
-const config = {
+module.exports = {
 	live: live,
 	host: host,
 	loadModelsWithModules: loadModelsWithModules,
 	loadControllersWithModules: loadControllersWithModules
 };
-
-module.exports = config;
