@@ -1,10 +1,6 @@
 
 'use strict'
 
-// modules
-const fs = require('fs');
-const show = require('eyecatcher');
-
 // change between 'local' and 'live' version
 const live = false;
 
@@ -70,55 +66,7 @@ let host = {
 if (live) host = host['live'];
 else host = host['local'];
 
-const loadControllersWithModules = (modules) => {
-
-	let controllers = [];
-
-	try {
-
-		fs.readdirSync(__dirname).forEach(function(file) {
-			if (file.match(/.+\.js/g) !== null && file != 'config.js') {
-			
-				const name = file.replace('.js', '');
-				controllers[name] = require(__dirname + '/' + name)(modules);
-				//show.warn('Controller "' + file + '" loaded');
-			};
-		});
-
-	} catch(error) {
-
-		return false;
-	};
-
-	return controllers;
-};
-
-const loadModelsWithModules = (modules) => {
-
-	let models = [];
-	
-	try {
-		
-		fs.readdirSync('./models').forEach(function(file) {
-			if (file.match(/.+\.js/g) !== null) {
-				
-				const name = file.replace('.js', '');
-				models[name] = require('../models/' + name)(modules);
-				//show.warn('Model "' + file + '" loaded');
-			};
-		});
-
-	} catch(error) {
-
-		return false;
-	};
-
-	return models;
-};
-
 module.exports = {
-	live: live,
-	host: host,
-	loadModelsWithModules: loadModelsWithModules,
-	loadControllersWithModules: loadControllersWithModules
+	live,
+	host
 };

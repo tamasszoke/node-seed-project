@@ -1,8 +1,10 @@
 
 'use strict';
 
+process.env.NODE_ENV = 'test';
+
 const expect = require('chai').expect;
-const config = require('../controllers/config');
+const config = require('../configuration/config');
 
 describe('#config', () => {
 
@@ -16,19 +18,5 @@ describe('#config', () => {
 	it('should get object', () => {
 		const result = config.host;
 		expect(result).to.be.an('object');
-	});
-
-	it('should throw TypeError', () => {
-		const result = config.loadModelsWithModules();
-		expect(result).to.satisfy(function(fn) {
-			return typeof fn === 'object'|| fn === false
-		});
-	});
-
-	it('should throw TypeError', () => {
-		const result = config.loadControllersWithModules();
-		expect(result).to.satisfy(function(fn) {
-			return typeof fn === 'object'|| fn === false
-		});
 	});
 });

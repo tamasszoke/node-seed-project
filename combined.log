@@ -3,3 +3,111 @@
 {"level":"debug","message":"Controller \"routing.js\" loaded"}
 {"level":"debug","message":"Controller \"socket.js\" loaded"}
 {"level":"debug","message":"Server ready on port 3000!"}
+{"message":"Model \"yourModel.js\" loaded","level":"warn"}
+{"message":"Controller \"routing.js\" loaded","level":"warn"}
+{"message":"Controller \"socket.js\" loaded","level":"warn"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Socket.IO client connected!","level":"info"}
+{"message":"Database connected!","level":"warn"}
+{"message":"Model \"yourModel.js\" loaded","level":"warn"}
+{"message":"Controller \"routing.js\" loaded","level":"warn"}
+{"message":"Controller \"socket.js\" loaded","level":"warn"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Socket.IO client connected!","level":"info"}
+{"message":"Database connected!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"info"}
+{"message":"Controller \"routing.js\" loaded","level":"info"}
+{"message":"Controller \"socket.js\" loaded","level":"info"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Socket.IO client connected!","level":"info"}
+{"message":"Database connected!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"info"}
+{"message":"Controller \"routing.js\" loaded","level":"info"}
+{"message":"Controller \"socket.js\" loaded","level":"info"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Socket.IO client connected!","level":"info"}
+{"message":"Database connected!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"info"}
+{"message":"Controller \"routing.js\" loaded","level":"info"}
+{"message":"Controller \"socket.js\" loaded","level":"info"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"info"}
+{"message":"Controller \"routing.js\" loaded","level":"info"}
+{"message":"Controller \"socket.js\" loaded","level":"info"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Database connected!","level":"info"}
+{"message":"Socket.IO client connected!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"info"}
+{"message":"Controller \"routing.js\" loaded","level":"info"}
+{"message":"Controller \"socket.js\" loaded","level":"info"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Socket.IO client connected!","level":"info"}
+{"message":"Database connected!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"info"}
+{"message":"Controller \"routing.js\" loaded","level":"info"}
+{"message":"Controller \"socket.js\" loaded","level":"info"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"info"}
+{"message":"Controller \"routing.js\" loaded","level":"info"}
+{"message":"Controller \"socket.js\" loaded","level":"info"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Socket.IO client connected!","level":"info"}
+{"message":"Database connected!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"info"}
+{"message":"Controller \"routing.js\" loaded","level":"info"}
+{"message":"Controller \"socket.js\" loaded","level":"info"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Socket.IO client connected!","level":"info"}
+{"message":"Database connected!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"info"}
+{"message":"Controller \"routing.js\" loaded","level":"info"}
+{"message":"Controller \"socket.js\" loaded","level":"info"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Database connected!","level":"info"}
+{"message":"Socket.IO client connected!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"info"}
+{"message":"Controller \"routing.js\" loaded","level":"info"}
+{"message":"Controller \"socket.js\" loaded","level":"info"}
+{"message":"Server ready on port 3000!","level":"info"}
+{"message":"Database connected!","level":"info"}
+{"message":"Socket.IO client connected!","level":"info"}
+{"message":"Model \"yourModel.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"routing.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"socket.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Server ready on port 3000!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Database connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Model \"yourModel.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"routing.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"socket.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Server ready on port 3000!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Database connected!","level":"\u001b[32minfo\u001b[39m"}
+2018-06-02T20:56:40.083Z [right meow!] info: Model "yourModel.js" loaded
+2018-06-02T20:56:40.087Z [right meow!] info: Controller "routing.js" loaded
+2018-06-02T20:56:40.090Z [right meow!] info: Controller "socket.js" loaded
+2018-06-02T20:56:40.091Z [right meow!] info: Server ready on port 3000!
+2018-06-02T20:56:41.161Z [right meow!] info: Database connected!
+2018-06-02T20:56:43.423Z [right meow!] info: Socket.IO client connected!
+{"message":"Model \"yourModel.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"routing.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"socket.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Server ready on port 3000!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Database connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client disconnected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Model \"yourModel.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"routing.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"socket.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Server ready on port 3000!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Database connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Model \"yourModel.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"routing.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"socket.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Server ready on port 3000!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Model \"yourModel.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"routing.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"socket.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Server ready on port 3000!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Database connected!","level":"\u001b[32minfo\u001b[39m"}

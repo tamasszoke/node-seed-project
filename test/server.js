@@ -1,16 +1,14 @@
 
 'use strict';
 
+process.env.NODE_ENV = 'test';
+
 const expect = require('chai').expect;
 const http = require('http');
 const assert = require('assert');
-const app = require('../app');
+const server = require('../server');
 
-describe('#app', () => {
-
-	/*before(() => {
-		app.listen;
-	});*/
+describe('#server', () => {
 
 	it('should return 200', (done) => {
 		http.get('http://localhost:3000', function (res) {
@@ -20,6 +18,6 @@ describe('#app', () => {
 	});
 
 	after(() => {
-		app.close();
+		server.close();
 	});
 });

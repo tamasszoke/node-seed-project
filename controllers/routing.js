@@ -3,10 +3,11 @@
 
 module.exports = (root) => {
 
+	const config = root.config;
 	const app = root.app;
 	const io = root.io;
 	const show = root.show;
-	const config = root.config;
+	const models = root.models;
 
 	// routing
 	app.get('/', (req, res) => {
