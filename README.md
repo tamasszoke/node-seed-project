@@ -14,6 +14,7 @@ Start Node.js, Express, Socket.IO development faster with extras!
 2. Start Grunt: <code>grunt watch</code>
 3. Go to <code>localhost:3000</code> in browser
 4. Test: <code>npm test</code>
+
 Note: don't forget to start mongoDB.
 
 ## Launcher script
