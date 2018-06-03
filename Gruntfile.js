@@ -3,7 +3,7 @@ var grunt = require('grunt');
 
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-jshint');
-grunt.loadNpmTasks('grunt-contrib-uglify');
+grunt.loadNpmTasks('grunt-contrib-uglify-es');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-notify');
 
@@ -13,7 +13,8 @@ grunt.initConfig({
 		files: ['static/js/dev/*.js'],
 		options: {
 			"-W032": true, /* ignores "unneccessary semicolon" warnings */
-			ignores: ['static/js_dev/jquery.js', 'static/js_dev/jquery-ui.js']
+			ignores: ['static/js_dev/jquery.js', 'static/js_dev/jquery-ui.js'],
+			esversion: 6
 		}
 	},
 	uglify: {
