@@ -24,11 +24,12 @@ Note: don't forget to start mongoDB.
 
 ## Basics
 
-Server side: `/controllers`<br/>
-Client side: `/views` and `/static`
+Server side: `/controllers` and `/models`<br/>
+Client side: `/views` and `/static`<br/>
+Tests: `/test`
 
 Server: `/app.js`<br/>
-Configuration: `/controllers/config.js`<br/>
+Configuration: `/configuration/config.js`<br/>
 Routing: `/controllers/routing.js`<br/>
 Socket.IO: `/controllers/socket.js`<br/>
 
