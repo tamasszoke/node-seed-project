@@ -111,3 +111,25 @@
 {"message":"Controller \"socket.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
 {"message":"Server ready on port 3000!","level":"\u001b[32minfo\u001b[39m"}
 {"message":"Database connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Model \"yourModel.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"routing.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"socket.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Server ready on port 3000!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Model \"yourModel.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"routing.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Controller \"socket.js\" loaded","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Server ready on port 3000!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Database connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client disconnected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client disconnected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client disconnected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client disconnected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client disconnected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client disconnected!","level":"\u001b[32minfo\u001b[39m"}
+{"message":"Socket.IO client connected!","level":"\u001b[32minfo\u001b[39m"}

@@ -10,9 +10,11 @@ Start Node.js, Express, Socket.IO development faster with extras!
 
 ## Usage
 
-1. Start Nodemon: <code>nodemon app.js</code>
+1. Start Nodemon: <code>nodemon server</code>
 2. Start Grunt: <code>grunt watch</code>
 3. Go to <code>localhost:3000</code> in browser
+4. Test: <code>npm test</code>
+Note: don't forget to start mongoDB.
 
 ## Launcher script
 
@@ -41,6 +43,7 @@ Create/modify SCSS files in `/static/css/dev`, Grunt will create `.min.css` to `
   - Body Parser (1.17.1)
   - Cookie Parser (1.4.3)
   - Express Session (1.15.2)
+- Helmet (3.12.1)
 - EJS (2.5.6)
 - Mongoose (5.1.3)
 - Socket.IO (2.1.1)
@@ -48,6 +51,8 @@ Create/modify SCSS files in `/static/css/dev`, Grunt will create `.min.css` to `
   - Passport Facebook (2.1.1)
   - Passport Twitter (1.0.4)
   - Passport Google-oauth (1.0.0)
+- Mocha (5.2.0)
+- Chai (4.1.2)
 - Nodemailer (4.6.5)
   - Nodemailer SMTP Transport (2.7.4)
 - Grunt (1.0.2)
@@ -58,6 +63,7 @@ Create/modify SCSS files in `/static/css/dev`, Grunt will create `.min.css` to `
   - Grunt Notify (0.4.5)
 - Request (2.81.0)
 - Path (0.12.7)
+- Winston (3.0.0-rc6)
 
 ## Built-in extras (optional)
 
