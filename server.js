@@ -76,7 +76,7 @@ if (process.env.NODE_ENV !== 'test') {
 const listen = () => {
 
 	server = http.createServer(app).listen(config['host'].port, config['host'].ip);
-	//server = https.createServer(configHost.sslOptions, app).listen(host.sslPort, host.ip);
+	//server = https.createServer(config['host'].sslOptions, app).listen(config['host'].sslPort, config['host'].ip);
 	io = socketio.listen(server);
 
 	// connect to database
@@ -85,37 +85,16 @@ const listen = () => {
 	db.on('error', (error) => { show.info('Database connection error!'); });
 	db.once('open', () => { show.info('Database connected!'); });
 	
-	// load models
-	const models = loadModels({
-		mongoose
-	});
-
 	// load controllers
 	const controllers = loadControllers({
 		config,
 		app,
 		io,
-		show,
-		models
+		mongoose,
+		show
 	});
 
 	show.info('Server ready on port ' + config['host'].port + '!');
-};
-
-const loadModels = (modules) => {
-
-	let models = [];
-	
-	fs.readdirSync('./models').forEach(function(file) {
-		if (file.match(/.+\.js/g) !== null) {
-			
-			const name = file.replace('.js', '');
-			models[name] = require('./models/' + name)(modules);
-			show.info('Model "' + file + '" loaded');
-		};
-	});
-
-	return models;
 };
 
 const loadControllers = (modules) => {
